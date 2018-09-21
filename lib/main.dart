@@ -125,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
 class TimerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return new Scaffold(
       body: new Container(
         decoration: new BoxDecoration(
           gradient: new LinearGradient(
@@ -138,15 +138,24 @@ class TimerScreen extends StatelessWidget {
             ],
           ),
         ),
-       child: new Column(
+       child: new Center(
+       child: new Row(
           children: <Widget>[
             Expanded(
              child: new FloatingActionButton(
+               heroTag: null,
               onPressed: () {},
              ),
+           ),
+             Expanded(
+             child: new FloatingActionButton(
+               heroTag: null,
+              onPressed: () {},
             ),
+             ),
           ],
          ),
+      ),
       ),
     );
   }
