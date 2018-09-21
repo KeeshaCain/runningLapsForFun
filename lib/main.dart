@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(new WelcomeScreen());
 
-class MyApp extends StatelessWidget {
+class WelcomeScreen extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Lap Counter',
       theme: new ThemeData(
         // This is the theme of your application.
         //
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         // counter didn't reset back to zero; the application is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+      home: new MyHomePage(title: 'Lap Counter'),
     );
   }
 }
@@ -65,45 +65,98 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return new Scaffold(
-      appBar: new AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: new Text(widget.title),
-      ),
-      body: new Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: new Column(
-          // Column is also layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug paint" (press "p" in the console where you ran
-          // "flutter run", or select "Toggle Debug Paint" from the Flutter tool
-          // window in IntelliJ) to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            new Text(
-              'You have pushed the button this many times:',
-            ),
-            new Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
+      // Here we take the value from the MyHomePage object that was created by
+      // the App.build method, and use it to set our appbar title.
+      body: new Container(
+        decoration: new BoxDecoration(
+          gradient: new LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            stops: [0.4, 0.9],
+            colors: [
+              Colors.orange[900],
+              Colors.purple[700],
+            ],
+          ),
         ),
-      ),
-      floatingActionButton: new FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: new Icon(Icons.add),
+        child: new Center(
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+          child: new Column(
+            // Column is also layout widget. It takes a list of children and
+            // arranges them vertically. By default, it sizes itself to fit its
+            // children horizontally, and tries to be as tall as its parent.
+            //
+            // Invoke "debug paint" (press "p" in the console where you ran
+            // "flutter run", or select "Toggle Debug Paint" from the Flutter tool
+            // window in IntelliJ) to see the wireframe for each widget.
+            //
+            // Column has various properties to control how it sizes itself and
+            // how it positions its children. Here we use mainAxisAlignment to
+            // center the children vertically; the main axis here is the vertical
+            // axis because Columns are vertical (the cross axis would be
+            // horizontal).
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              new Text(
+                'Proceed to lap timer',
+              ),
+              new Text(
+                '$_counter',
+                style: Theme.of(context).textTheme.display1,
+              ),
+              new FloatingActionButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => TimerScreen()),
+                  );
+                },
+                child: Icon(Icons.arrow_forward),
+              ),
+            ],
+          ),
+        ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class TimerScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      body: new Container(
+        decoration: new BoxDecoration(
+          gradient: new LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            stops: [0.4, 0.8],
+            colors: [
+              Colors.orange[900],
+              Colors.purple[700],
+            ],
+          ),
+        ),
+       child: new Center(
+       child: new Row(
+          children: <Widget>[
+            Expanded(
+             child: new FloatingActionButton(
+               heroTag: null,
+              onPressed: () {},
+             ),
+           ),
+             Expanded(
+             child: new FloatingActionButton(
+               heroTag: null,
+              onPressed: () {},
+            ),
+             ),
+          ],
+         ),
+      ),
+      ),
     );
   }
 }
