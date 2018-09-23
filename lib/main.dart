@@ -17,7 +17,7 @@ class WelcomeScreen extends StatelessWidget {
         // "hot reload" (press "r" in the console where you ran "flutter run",
         // or press Run > Flutter Hot Reload in IntelliJ). Notice that the
         // counter didn't reset back to zero; the application is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepPurple,
       ),
       home: new MyHomePage(title: 'Lap Counter'),
     );
@@ -99,11 +99,9 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               new Text(
-                'Proceed to lap timer',
-              ),
-              new Text(
-                '$_counter',
-                style: Theme.of(context).textTheme.display1,
+                'Press to begin',
+                style: new TextStyle(fontSize: 30.0),
+
               ),
               new FloatingActionButton(
                 onPressed: () {
@@ -138,25 +136,29 @@ class TimerScreen extends StatelessWidget {
             ],
           ),
         ),
-       child: new Center(
-       child: new Row(
-          children: <Widget>[
-            Expanded(
-             child: new FloatingActionButton(
-               heroTag: null,
-              onPressed: () {},
-             ),
-           ),
-             Expanded(
-             child: new FloatingActionButton(
-               heroTag: null,
-              onPressed: () {},
-            ),
-             ),
-          ],
-         ),
-      ),
+        child: new Center(
+          child: new Row(
+            children: <Widget>[
+              Expanded(
+                child: new FloatingActionButton(
+                  heroTag: null,
+                  onPressed: () {},
+                ),
+              ),
+              Expanded(
+                child: new FloatingActionButton(
+                  heroTag: null,
+                  onPressed: () {},
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
 }
+
+
+
+
