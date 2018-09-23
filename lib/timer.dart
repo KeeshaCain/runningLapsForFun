@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TimerScreen extends StatefulWidget {
+  var stopwatch = new Stopwatch()..start();
+
 
   @override
   Widget build(BuildContext context) {
