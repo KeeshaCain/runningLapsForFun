@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 
-class TimerScreen extends StatefulWidget {
-  var stopwatch = new Stopwatch()..start();
-
+class TimerScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +24,8 @@ class TimerScreen extends StatefulWidget {
               Expanded(
                 child: new FloatingActionButton(
                   heroTag: null,
-                  onPressed: () {},
+                  onPressed: () {
+                  },
                 ),
               ),
               Expanded(
@@ -41,3 +41,19 @@ class TimerScreen extends StatefulWidget {
     );
   }
 }
+
+class Timer extends StatefulWidget{
+  Timer({Key key}) : super(key: key);
+
+  _TimerState createState() => new _TimerState();
+}
+
+class _TimerState extends State<Timer>{
+
+  final Stopwatch stopwatch = Stopwatch();
+
+
+
+
+}
+
