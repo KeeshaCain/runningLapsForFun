@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'timer.dart';
+import 'secondPage.dart';
+
 
 void main() => runApp(new MyApp());
 
@@ -51,6 +52,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           ),
         ),
         child: new Center(
+
 
           child: new Column(
 
