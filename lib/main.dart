@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'secondPage.dart';
-
+import 'timer.dart';
 
 void main() => runApp(new MyApp());
 
@@ -67,7 +67,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => TimerScreen()),
+                    MaterialPageRoute(builder: (context) => CreateTimer()),
                   );
                 },
                 child: Icon(Icons.arrow_forward),

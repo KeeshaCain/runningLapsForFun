@@ -39,34 +39,12 @@ class TimerScreen extends StatelessWidget {
         ],
       ),
     );
-
-//    Column buildButtonColumn(IconData icon, String label) {
-//      Color color = Theme.of(context).primaryColor;
-//
-//      return Column(
-//        mainAxisSize: MainAxisSize.min,
-//        mainAxisAlignment: MainAxisAlignment.center,
-//        children: [
-//          Icon(icon, color: color),
-//          Container(
-//            margin: const EdgeInsets.only(top: 8.0),
-//            child: Text(
-//              label,
-//              style: TextStyle(
-//                fontSize: 12.0,
-//                fontWeight: FontWeight.w400,
-//                color: color,
-//              ),
-//            ),
-//          ),
-//        ],
-//      );
-//    }
+    
 
     Widget bottomButtons;
     bottomButtons = Container (
 
-//TODO Why are the buttons not at the bottom of the screen? Is the code below causing this?
+//TODO Why are the buttons not at the bottom of the screen? Is the code below when I am calling this function causing this?
       child: new Align(
         alignment: Alignment.bottomCenter,
         child: Row(
@@ -75,6 +53,7 @@ class TimerScreen extends StatelessWidget {
             new Expanded(
               child: new RaisedButton(
                 padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
+                splashColor: Colors.deepPurple,
                 child: Text(
                   'Start',
                   style: TextStyle(
@@ -86,13 +65,13 @@ class TimerScreen extends StatelessWidget {
                 onPressed: (){
 
 //TODO button changes to reset when start is pressed
-
                 },
               ),
             ),
             new Expanded(
               child: new RaisedButton(
                 padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
+                  splashColor: Colors.deepPurple,
                 child: Text(
                   'Stop',
                   style: TextStyle(
