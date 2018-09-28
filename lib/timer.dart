@@ -1,6 +1,23 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
+class PageTwo extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      home: Scaffold(
+        body: new ListView.builder (
+            itemCount: litems.length
+        )
+        ),
+      );
+  }
+
+}
+
+
+
 
 class CreateTimer extends StatefulWidget{
   @override
@@ -31,7 +48,7 @@ class _CreateTimerState extends State<CreateTimer>{
         padding: EdgeInsets.all(20.0),
         child: new Column(
           children: <Widget>[
-            new Text(elapsedTime, style: new TextStyle(fontSize:25.0)),
+            new Text(elapsedTime, style: new TextStyle(fontSize:60.0)),
             new Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget> [
@@ -70,6 +87,21 @@ class _CreateTimerState extends State<CreateTimer>{
 
                   ),
                 ),
+                new Expanded(
+                  child: new RaisedButton(
+                    padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
+                    splashColor: Colors.deepPurple,
+                    child: Text(
+                      'Reset',
+                      style: TextStyle(
+                        fontSize: 30.0,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.blue,
+                      ),
+                    ),
+                    onPressed: resetWatch,
+                  ),
+                ),
               ]
             ),
           ],
@@ -100,9 +132,9 @@ class _CreateTimerState extends State<CreateTimer>{
   }
 
   transformMilliSeconds(int milliseconds) {
-    int hundreds = (milliseconds / 10).truncate();
-    int seconds = (hundreds / 100).truncate();
-    int minutes = (seconds / 60).truncate();
+    final int hundreds = (milliseconds / 10).truncate();
+    final int seconds = (hundreds / 100).truncate();
+    final int minutes = (seconds / 60).truncate();
 
     String minutesStr = (minutes % 60).toString().padLeft(2, '0');
     String secondsStr = (seconds % 60).toString().padLeft(2, '0');

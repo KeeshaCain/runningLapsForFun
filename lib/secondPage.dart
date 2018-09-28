@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'timer.dart';
 
 class TimerScreen extends StatelessWidget {
   @override
@@ -39,7 +38,7 @@ class TimerScreen extends StatelessWidget {
         ],
       ),
     );
-    
+
 
     Widget bottomButtons;
     bottomButtons = Container (
